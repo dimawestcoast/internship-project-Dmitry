@@ -44,10 +44,10 @@ def switch_to_new_tab(context):
 
 
 @then('Verify there are 4 steps on the presentation page')
-def verify_4_steps(context):
-    steps = context.driver.find_element(By.CSS_SELECTOR, '[class="w-layout-grid steps-grid"]')
-    text = steps.text
-    print(text)
+# def verify_4_steps(context):
+#     steps = context.driver.find_element(By.CSS_SELECTOR, '[class="w-layout-grid steps-grid"]')
+#     text = steps.text
+#     print(text)
     # visible_elements = 0
     # for step in steps:
     #     if step.is_displayed() and step.is_eneabled():
@@ -61,7 +61,9 @@ def verify_4_steps(context):
 def verify_subscription_plan_clickable(context):
     element2 = context.driver.find_element(By.XPATH, "//a[contains(@href, '/pro')]")
 
-    if element2.is_enabled():
-        print("Subscription plans button is clickable.")
-    else:
-        print("Subscription plans button is not clickable.")
+    assert element2.is_enabled()
+
+    # if element2.is_enabled():
+    #     print("Subscription plans button is clickable.")
+    # else:
+    #     print("Subscription plans button is not clickable.")
